@@ -13,7 +13,6 @@ How to run:
 - user can change his name from guest to whatever name you want by typing /nick <your nick name> (without < > yes just the name).
 - user can join or create a room by typing /join <room name>
 - you can create custom command by editing the "Chat.prototype.processCommand" function at the chat.js file for example you want to add a color to the user background and so on.
-- 
 
 
 Good Luck, feel free to ask me questions.
