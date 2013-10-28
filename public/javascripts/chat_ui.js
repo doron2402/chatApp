@@ -9,9 +9,6 @@ function divSystemContentElement (message) {
 function processUserInput (chatApp, socket) {
 	var message = $('#send-message').val();
 	var systemMessage;
-	console.log('Processing user input');
-	console.log(socket);
-	console.log(chatApp);
 
 	if (message.charAt(0) == '/') { // User input command
 		systemMessage = chatApp.processCommand(message);
@@ -29,7 +26,8 @@ function processUserInput (chatApp, socket) {
 
 var socket = io.connect();
 
-$(document).ready(function(){
+$(document).ready(function() {
+
 	var chatApp = new Chat(socket);
 
 	socket.on('nameResult', function(result) {
@@ -45,7 +43,7 @@ $(document).ready(function(){
 
 	// Change room
 	socket.on('joinResult', function(result){
-		$('#room').text(' Current Room: ' + result.room);
+		$('#room').text(result.room);
 		$('#messages').append(divSystemContentElement('Room changed'));
 	});
 
@@ -56,15 +54,16 @@ $(document).ready(function(){
 	});
 
 	socket.on('rooms', function(rooms){
-		//$('#room-list').empty();
+
+		$('#room-list #list').empty();//empty room list only the available rooms
 
 		for (var room in rooms) {
 			room = room.substring(1, room.length);
 			if (room != '')
-				$('#room-list').append(divEscapedContentElement(room));
+				$('#room-list #list').append(divEscapedContentElement(room));
 		}//eo for loop
 
-		$('#room-list div').click(function(){
+		$('#room-list #list div').click(function(){
 			chatApp.processCommand('/join ' + $(this).text());
 			$('#send-message').focus();
 		});

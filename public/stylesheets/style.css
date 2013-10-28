@@ -14,17 +14,21 @@ a {
 }
 
 #room {
-	background-color: #ddd;
+	background-color: #DBC;
 	margin-bottom: 1em;
+	padding: 10px 4px;
+
 }
 
 #messages {
-	width: 690px;
+	width: 660px;
 	height: 300px;
 	overflow: auto;
 	background-color: #eee;
 	margin-bottom: 1em;
 	margin-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
 }
 
 #room-list {
@@ -34,11 +38,16 @@ a {
 	overflow: auto;
 }
 
-#room-list div {
+#room-list #headline {
+	border-bottom: 3px solid #eee;
+	font: 19px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#room-list #list div {
 	border-bottom: 1px solid #eee;
 }
 
-#room-list div:hover {
+#room-list #list div:hover {
 	background-color: #ddd;
 }
 
