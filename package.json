@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "socket.io": "~0.9.16",
-    "mime": "~1.2.11"
+    "mime": "~1.4.1"
   }
 }
