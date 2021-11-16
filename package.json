@@ -20,7 +20,7 @@
     "url": "https://github.com/doron2402/chatApp/issues"
   },
   "dependencies": {
-    "socket.io": "~0.9.16",
+    "socket.io": "~1.0.1",
     "mime": "~1.2.11"
   }
 }
